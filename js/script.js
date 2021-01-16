@@ -65,7 +65,12 @@ function changerSlot(S, msg) {
     console.log(msg)
     var slots = document.querySelectorAll("#" + S + "_Slot")
     slots.forEach(slot => {
-        slot.innerText = msg
+        if (msg != "") {
+            slot.innerHTML = "<span>" + msg + "</span>"
+        } else {
+            slot.style.backgroundColor = "#1B262C"
+        }
+
     });
 }
 init(

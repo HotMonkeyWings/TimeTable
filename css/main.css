@@ -29,7 +29,8 @@ body {
     border-width: 2px; */
     text-align: center;
     font-size: 15px;
-    line-height: normal;
+    height: 78px;
+    line-height: 78px;
     transition: 200ms ease-in-out;
     z-index: 2;
     -webkit-user-select: none;
@@ -40,6 +41,7 @@ body {
     /* IE10+/Edge */
     user-select: none;
     /* Standard */
+    display: inline-block;
     word-wrap: break-word;
 }
 
