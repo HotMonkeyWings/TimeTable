@@ -1,0 +1,55 @@
+@import url(//db.onlinewebfonts.com/c/67137b5f6928edc941186baaab5a664b?family=Lemon/Milk);
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Lemon/Milk', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #1B262C;
+    z-index: 0;
+}
+
+.grid-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(5, 119px);
+    grid-column-gap: 49px;
+    grid-template-rows: repeat(9, 78px);
+}
+
+.slot-block {
+    /* border-style: solid;
+    border-width: 2px; */
+    text-align: center;
+    font-size: 15px;
+    line-height: normal;
+    transition: 200ms ease-in-out;
+    z-index: 2;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    word-wrap: break-word;
+}
+
+.slot-block>span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.slot-block.active {
+    transform: scale(1.2);
+    z-index: 3;
+}
