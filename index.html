@@ -15,16 +15,8 @@
         function show(shown, hidden) {
             document.getElementById(shown).style.display = 'grid';
             document.getElementById(hidden).style.display = 'none';
-            // init(
-            //     document.getElementById("A").value,
-            //     document.getElementById("B").value,
-            //     document.getElementById("C").value,
-            //     document.getElementById("D").value,
-            //     document.getElementById("E").value,
-            //     document.getElementById("F").value,
-            //     document.getElementById("G").value,
-            //     document.getElementById("H").value
-            // )
+
+            // Update the timetable slots
             changerSlot("A", document.getElementById("A").value)
             changerSlot("B", document.getElementById("B").value)
             changerSlot("C", document.getElementById("C").value)
@@ -33,15 +25,13 @@
             changerSlot("F", document.getElementById("F").value)
             changerSlot("G", document.getElementById("G").value)
             changerSlot("H", document.getElementById("H").value)
-            var slotlist = document.querySelectorAll('.slot-block')
-            console.log(slotlist)
             return false;
         }
     </script>
 </head>
 
 <body>
-    <div class="details" id="details">
+    <form class="details" id="details">
         <label for="A">A:</label>
         <input type="text" id="A" name="A"><br><br>
         <label for="B">B:</label>
@@ -59,7 +49,7 @@
         <label for="H">H:</label>
         <input type="text" id="H" name="H"><br><br>
         <a href="#" onclick="return show('grid-container','details');">Submit</a>
-    </div>
+    </form>
 
 
     <div class="grid-container" style="display: none;" id="grid-container"></div>

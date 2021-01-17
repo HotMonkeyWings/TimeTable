@@ -11,7 +11,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: #1B262C;
-    z-index: 0;
+    z-index: -2;
 }
 
 .grid-container {
@@ -22,6 +22,7 @@ body {
     grid-template-columns: repeat(5, 119px);
     grid-column-gap: 49px;
     grid-template-rows: repeat(9, 78px);
+    transition: all 2s ease-in-out;
 }
 
 .slot-block {
@@ -32,7 +33,7 @@ body {
     height: 78px;
     line-height: 78px;
     transition: 200ms ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
     -webkit-user-select: none;
     /* Safari */
     -moz-user-select: none;
@@ -43,15 +44,17 @@ body {
     /* Standard */
     display: inline-block;
     word-wrap: break-word;
+    -webkit-transform: translateZ(-1);
 }
 
 .slot-block>span {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+    -webkit-transform: translateZ(0);
 }
 
 .slot-block.active {
     transform: scale(1.2);
-    z-index: 3;
+    /* z-index: 3; */
 }
