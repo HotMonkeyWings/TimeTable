@@ -7,7 +7,7 @@
     <title>Timetable</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <script src="js/script.js" defer></script>
     <script src="js/hover.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -25,6 +25,10 @@
             changerSlot("F", document.getElementById("F").value)
             changerSlot("G", document.getElementById("G").value)
             changerSlot("H", document.getElementById("H").value)
+
+            thething = document.querySelector(".grid-container");
+            thething.classList.remove("before")
+
             return false;
         }
     </script>
@@ -52,7 +56,7 @@
     </form>
 
 
-    <div class="grid-container" style="display: none;" id="grid-container"></div>
+    <div class="grid-container before" style="display: grid;" id="grid-container"></div>
 
 </body>
 

@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Lemon/Milk', sans-serif;
     font-weight: normal;
+    overflow: hidden;
 }
 
 body {
@@ -14,20 +15,25 @@ body {
     z-index: -2;
 }
 
+.grid-container.before {
+    padding-top: 300vh;
+    padding-right: 119px;
+}
+
 .grid-container {
     display: grid;
     justify-content: center;
     align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(5, 119px);
+    grid-template-columns: repeat(6, 119px);
     grid-column-gap: 49px;
-    grid-template-rows: repeat(9, 78px);
-    transition: all 2s ease-in-out;
+    grid-template-rows: repeat(10, 78px);
+    transition: all 1000ms ease-in-out;
+    padding-right: 119px;
+    padding-bottom: 78px;
 }
 
 .slot-block {
-    /* border-style: solid;
-    border-width: 2px; */
     text-align: center;
     font-size: 15px;
     height: 78px;

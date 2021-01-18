@@ -4,10 +4,93 @@ function init(A, B, C, D, E, F, G) {
     let slots = [A, B, C, D, E, F, G]
     var c
     var msg
-    for (let i = 0; i < 9 * 5; i++) {
-        c = i % 7
+    for (let i = 0; i < 10 * 6; i++) {
+
+        //For timings
+        if (i % 6 == 0) {
+            let start_time = ""
+            let end_time = ""
+            switch (i) {
+                case 6:
+                    start_time = "08:00 AM"
+                    end_time = "09:00 AM"
+                    break
+                case 12:
+                    start_time = "09:00 AM"
+                    end_time = "10:00 AM"
+                    break
+                case 18:
+                    start_time = "10:15 AM"
+                    end_time = "11:15 AM"
+                    break
+                case 24:
+                    start_time = "11:15 AM"
+                    end_time = "12:15 AM"
+                    break
+                case 30:
+                    start_time = "01:00 PM"
+                    end_time = "02:00 PM"
+                    break
+                case 36:
+                    start_time = "02:00 PM"
+                    end_time = "03:00 PM"
+                    break
+                case 42:
+                    start_time = "03:00 PM"
+                    end_time = "04:00 PM"
+                    break
+                case 48:
+                    start_time = "04:00 PM"
+                    end_time = "05:00 PM"
+                    break
+                case 54:
+                    start_time = "05:00 PM"
+                    end_time = "06:00 PM"
+                    break
+            }
+            table.insertAdjacentHTML('beforeend',
+                `
+        <div class="slot-block time" style="font-size:16px;color:#587D71;text-align:right">
+        <span>${start_time}<br>
+        ${end_time}
+        <span></div>
+        `)
+            continue
+        }
+
+
+        //For day titles
+        if (i < 6) {
+            let day
+            switch (i) {
+                case 1:
+                    day = "Monday"
+                    break;
+                case 2:
+                    day = "Tuesday"
+                    break;
+                case 3:
+                    day = "Wednesday"
+                    break;
+                case 4:
+                    day = "Thursday"
+                    break;
+                case 5:
+                    day = "Friday"
+                    break;
+            }
+            table.insertAdjacentHTML('beforeend',
+                `
+        <div class="slot-block day" style="font-size:20px;color:#587D71"><span>${day}<span></div>
+        `)
+            continue
+        }
+
+
+        //For slots
+        c = (i - 6 - Math.floor(i / 6)) % 7
         msg = slots[c]
-        if (i <= 21 || (i >= 25 && i <= 29)) {
+        if (i < 33 || i > 35 && i < 40) {
             var hex = "#"
             switch (c) {
                 case 0:
@@ -42,9 +125,19 @@ function init(A, B, C, D, E, F, G) {
                 default:
                     hex += "FFFFFF"
             }
-        } else if (i == 22 || i == 24 || i == 40 || i == 41) {
+        } else if (i == 33 || i == 35 || i == 55 || i == 56) {
             c = "H"
             var hex = "#E83F6F"
+        } else if (i == 40) {
+            hex = "#C0FDFB"
+            c = "C"
+
+        } else if (i == 41) {
+            hex = "#63B4D1"
+            c = "B"
+        } else if (i == 59) {
+            hex = "#90FCF9"
+            c = "D"
         } else {
             c = "LAB"
             var hex = "#1B262C"
@@ -83,33 +176,3 @@ init(
     document.getElementById("G").value,
     document.getElementById("H").value
 )
-
-// init("A", "B", "C", "D", "E", "F", "G")
-
-// $("#A").change(() => {
-//     changerSlot("A", document.getElementById("A").value)
-// })
-
-// $("#B").change(() => {
-//     changerSlot("B", document.getElementById("B").value)
-// })
-
-// $("#C").change(() => {
-//     changerSlot("C", document.getElementById("C").value)
-// })
-
-// $("#D").change(() => {
-//     changerSlot("D", document.getElementById("D").value)
-// })
-
-// $("#E").change(() => {
-//     changerSlot("E", document.getElementById("E").value)
-// })
-
-// $("#F").change(() => {
-//     changerSlot("F", document.getElementById("F").value)
-// })
-
-// $("#G").change(() => {
-//     changerSlot("G", document.getElementById("G").value)
-// })

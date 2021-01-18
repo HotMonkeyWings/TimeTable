@@ -2,7 +2,7 @@ var slotlist = document.querySelectorAll('.slot-block')
 console.log(slotlist)
 
 function openModal(modal) {
-    if (modal == null || modal.innerText == "") return
+    if (modal == null || modal.innerText == "" || modal.classList.contains("day") || modal.classList.contains("time")) return
     modal.classList.add('active')
 }
 
